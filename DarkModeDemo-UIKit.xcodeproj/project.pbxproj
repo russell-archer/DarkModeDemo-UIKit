@@ -9,21 +9,30 @@
 /* Begin PBXBuildFile section */
 		6814C6F3231AA685008AB52C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6814C6F2231AA685008AB52C /* AppDelegate.swift */; };
 		6814C6F5231AA685008AB52C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6814C6F4231AA685008AB52C /* SceneDelegate.swift */; };
-		6814C6F7231AA685008AB52C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6814C6F6231AA685008AB52C /* ViewController.swift */; };
 		6814C6FA231AA685008AB52C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6814C6F8231AA685008AB52C /* Main.storyboard */; };
 		6814C6FC231AA686008AB52C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6814C6FB231AA686008AB52C /* Assets.xcassets */; };
 		6814C6FF231AA686008AB52C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6814C6FD231AA686008AB52C /* LaunchScreen.storyboard */; };
+		6814C707231AA750008AB52C /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6814C706231AA750008AB52C /* TableViewController.swift */; };
+		6814C709231AA7E6008AB52C /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6814C708231AA7E6008AB52C /* AnimalCell.swift */; };
+		6814C70B231AA85F008AB52C /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6814C70A231AA85F008AB52C /* Animal.swift */; };
+		6814C70D231AA876008AB52C /* AnimalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6814C70C231AA876008AB52C /* AnimalRepository.swift */; };
+		68E77A72231C41C20019D734 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E77A71231C41C20019D734 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6814C6EF231AA685008AB52C /* DarkModeDemo-UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DarkModeDemo-UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6814C6F2231AA685008AB52C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6814C6F4231AA685008AB52C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6814C6F6231AA685008AB52C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6814C6F9231AA685008AB52C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6814C6FB231AA686008AB52C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6814C6FE231AA686008AB52C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6814C700231AA686008AB52C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6814C706231AA750008AB52C /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		6814C708231AA7E6008AB52C /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
+		6814C70A231AA85F008AB52C /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		6814C70C231AA876008AB52C /* AnimalRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalRepository.swift; sourceTree = "<group>"; };
+		6849A010231BF8FD00105323 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		68E77A71231C41C20019D734 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +49,7 @@
 		6814C6E6231AA685008AB52C = {
 			isa = PBXGroup;
 			children = (
+				6849A010231BF8FD00105323 /* README.md */,
 				6814C6F1231AA685008AB52C /* DarkModeDemo-UIKit */,
 				6814C6F0231AA685008AB52C /* Products */,
 			);
@@ -56,13 +66,17 @@
 		6814C6F1231AA685008AB52C /* DarkModeDemo-UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				6814C700231AA686008AB52C /* Info.plist */,
+				6814C70A231AA85F008AB52C /* Animal.swift */,
+				6814C708231AA7E6008AB52C /* AnimalCell.swift */,
+				6814C70C231AA876008AB52C /* AnimalRepository.swift */,
 				6814C6F2231AA685008AB52C /* AppDelegate.swift */,
+				68E77A71231C41C20019D734 /* DetailViewController.swift */,
 				6814C6F4231AA685008AB52C /* SceneDelegate.swift */,
-				6814C6F6231AA685008AB52C /* ViewController.swift */,
-				6814C6F8231AA685008AB52C /* Main.storyboard */,
+				6814C706231AA750008AB52C /* TableViewController.swift */,
 				6814C6FB231AA686008AB52C /* Assets.xcassets */,
 				6814C6FD231AA686008AB52C /* LaunchScreen.storyboard */,
-				6814C700231AA686008AB52C /* Info.plist */,
+				6814C6F8231AA685008AB52C /* Main.storyboard */,
 			);
 			path = "DarkModeDemo-UIKit";
 			sourceTree = "<group>";
@@ -138,9 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6814C6F7231AA685008AB52C /* ViewController.swift in Sources */,
 				6814C6F3231AA685008AB52C /* AppDelegate.swift in Sources */,
+				6814C709231AA7E6008AB52C /* AnimalCell.swift in Sources */,
 				6814C6F5231AA685008AB52C /* SceneDelegate.swift in Sources */,
+				6814C70D231AA876008AB52C /* AnimalRepository.swift in Sources */,
+				6814C707231AA750008AB52C /* TableViewController.swift in Sources */,
+				6814C70B231AA85F008AB52C /* Animal.swift in Sources */,
+				68E77A72231C41C20019D734 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
