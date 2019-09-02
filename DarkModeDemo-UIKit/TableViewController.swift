@@ -21,9 +21,25 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath) as! AnimalCell
 
-        cell.animalName.text = dataStore.animals[indexPath.row].name
-        cell.animalDescription.text = dataStore.animals[indexPath.row].description
-        cell.animalImageView.image = UIImage(named: dataStore.animals[indexPath.row].thumbName)
+        let selectedAnimal = dataStore.animals[indexPath.row]
+        
+        /*
+         
+         Use colors that adapt to the display mode rather than static colors.
+         
+         cell.colorTabView.backgroundColor = selectedAnimal.canFly ? UIColor.red : UIColor.blue
+         
+         */
+        
+        // The colors adaptiveRed and adaptiveBlue are defined in the asset catalogue
+        cell.colorTabView.backgroundColor = UIColor(named: selectedAnimal.canFly ? "adaptiveRed" : "adaptiveBlue")
+        cell.animalName.text = selectedAnimal.name
+        
+        cell.animalDescription.text = selectedAnimal.description
+        cell.animalDescription.textColor = UIColor.secondaryLabel  // Use new iOS System Colors like this rather than a static color
+        
+        // thumbName is the name of an adaptive image in the asset catalog
+        cell.animalImageView.image = UIImage(named: selectedAnimal.thumbName)
         
         return cell
     }

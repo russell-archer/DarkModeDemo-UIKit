@@ -15,11 +15,11 @@ class AnimalRepository {
     
     init() {
         // Create initial test data
-        animals.append(Animal(name: "Eagle", description: "Flys"))
-        animals.append(Animal(name: "Owl", description: "Hoots"))
-        animals.append(Animal(name: "Parrot", description: "Talks"))
-        animals.append(Animal(name: "Penguin", description: "Waddles"))
-        animals.append(Animal(name: "Zebra", description: "Runs"))
+        animals.append(Animal(name: "Eagle", description: "Flys", canFly: true))
+        animals.append(Animal(name: "Owl", description: "Hoots", canFly: true))
+        animals.append(Animal(name: "Parrot", description: "Talks", canFly: true))
+        animals.append(Animal(name: "Penguin", description: "Waddles", canFly: false))
+        animals.append(Animal(name: "Zebra", description: "Runs", canFly: false))
     }
 }
 

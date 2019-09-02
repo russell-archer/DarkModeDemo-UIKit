@@ -23,42 +23,56 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J32-S7-UuL">
-                                            <rect key="frame" x="20" y="4" width="72" height="72"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="es9-Zf-7Lq">
+                                            <rect key="frame" x="20" y="4" width="20" height="72"/>
+                                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="72" id="2pK-Hj-b2M"/>
+                                                <constraint firstAttribute="width" constant="20" id="Mmf-am-6C2"/>
+                                            </constraints>
+                                        </view>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J32-S7-UuL">
+                                            <rect key="frame" x="48" y="4" width="72" height="72"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="AVN-Dh-ZNz"/>
                                                 <constraint firstAttribute="width" constant="72" id="OO6-lC-MCt"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="UgP-nI-ZsJ"/>
                                                 <constraint firstAttribute="height" constant="72" id="cwo-rl-wPC"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjC-er-SyN">
-                                            <rect key="frame" x="100" y="11" width="294" height="29"/>
+                                            <rect key="frame" x="128" y="4" width="266" height="29"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzk-Ug-AkO">
-                                            <rect key="frame" x="100" y="55" width="294" height="21"/>
+                                            <rect key="frame" x="128" y="55" width="266" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="pjC-er-SyN" firstAttribute="trailing" secondItem="OaN-8a-w8o" secondAttribute="trailingMargin" id="4av-l6-exv"/>
-                                        <constraint firstItem="pjC-er-SyN" firstAttribute="leading" secondItem="J32-S7-UuL" secondAttribute="trailing" constant="8" id="OEs-3V-7aV"/>
-                                        <constraint firstItem="pjC-er-SyN" firstAttribute="top" secondItem="OaN-8a-w8o" secondAttribute="topMargin" id="Wg5-Ne-HJd"/>
-                                        <constraint firstItem="J32-S7-UuL" firstAttribute="top" secondItem="OaN-8a-w8o" secondAttribute="top" constant="4" id="gMr-Bf-shu"/>
-                                        <constraint firstItem="Vzk-Ug-AkO" firstAttribute="leading" secondItem="J32-S7-UuL" secondAttribute="trailing" constant="8" id="pRv-P1-mM2"/>
-                                        <constraint firstItem="J32-S7-UuL" firstAttribute="leading" secondItem="OaN-8a-w8o" secondAttribute="leading" constant="20" id="pcP-BX-sIs"/>
-                                        <constraint firstItem="pjC-er-SyN" firstAttribute="leading" secondItem="J32-S7-UuL" secondAttribute="trailing" constant="8" id="sdS-ks-jrf"/>
-                                        <constraint firstItem="Vzk-Ug-AkO" firstAttribute="top" secondItem="pjC-er-SyN" secondAttribute="bottom" constant="15" id="xl1-a9-C8C"/>
-                                        <constraint firstAttribute="trailing" secondItem="Vzk-Ug-AkO" secondAttribute="trailing" constant="20" id="z7c-uI-ZVX"/>
+                                        <constraint firstItem="J32-S7-UuL" firstAttribute="leading" secondItem="es9-Zf-7Lq" secondAttribute="trailing" constant="8" id="6H5-CG-1I2"/>
+                                        <constraint firstItem="pjC-er-SyN" firstAttribute="leading" secondItem="J32-S7-UuL" secondAttribute="trailing" constant="8" id="6pu-e6-2Zi"/>
+                                        <constraint firstItem="Vzk-Ug-AkO" firstAttribute="leading" secondItem="J32-S7-UuL" secondAttribute="trailing" constant="8" id="7He-lp-xPD"/>
+                                        <constraint firstItem="pjC-er-SyN" firstAttribute="leading" secondItem="J32-S7-UuL" secondAttribute="trailing" constant="8" id="8Fk-6d-2bi"/>
+                                        <constraint firstItem="Vzk-Ug-AkO" firstAttribute="top" secondItem="pjC-er-SyN" secondAttribute="bottom" constant="22" id="BJG-J8-DdV"/>
+                                        <constraint firstAttribute="trailing" secondItem="pjC-er-SyN" secondAttribute="trailing" constant="20" id="IZ3-W6-nSB"/>
+                                        <constraint firstItem="es9-Zf-7Lq" firstAttribute="top" secondItem="OaN-8a-w8o" secondAttribute="top" constant="4" id="TDm-Br-27h"/>
+                                        <constraint firstItem="J32-S7-UuL" firstAttribute="leading" secondItem="es9-Zf-7Lq" secondAttribute="trailing" constant="8" id="W7s-1v-opN"/>
+                                        <constraint firstItem="es9-Zf-7Lq" firstAttribute="leading" secondItem="OaN-8a-w8o" secondAttribute="leading" constant="20" id="Z0S-Cc-txr"/>
+                                        <constraint firstAttribute="trailing" secondItem="Vzk-Ug-AkO" secondAttribute="trailing" constant="20" id="evM-2L-Dvp"/>
+                                        <constraint firstItem="J32-S7-UuL" firstAttribute="top" secondItem="OaN-8a-w8o" secondAttribute="top" constant="4" id="gWl-8o-zGs"/>
+                                        <constraint firstItem="pjC-er-SyN" firstAttribute="top" secondItem="OaN-8a-w8o" secondAttribute="top" constant="4" id="wZn-Kc-V13"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="animalDescription" destination="Vzk-Ug-AkO" id="pIY-eV-6xp"/>
                                     <outlet property="animalImageView" destination="J32-S7-UuL" id="Tn4-kJ-p1t"/>
                                     <outlet property="animalName" destination="pjC-er-SyN" id="nEH-G5-jYz"/>
+                                    <outlet property="colorTabView" destination="es9-Zf-7Lq" id="W1e-L0-A6s"/>
                                     <segue destination="k4I-0w-mow" kind="show" identifier="segue2Details" destinationCreationSelector="segueToDetailsViewController:" id="o5P-jG-Dxp"/>
                                 </connections>
                             </tableViewCell>

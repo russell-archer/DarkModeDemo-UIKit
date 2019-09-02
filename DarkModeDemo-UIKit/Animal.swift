@@ -16,5 +16,6 @@ struct Animal: Identifiable {
     var description: String
     var imageName: String { return name }
     var thumbName: String { return name + "Thumb" }
+    var canFly: Bool
 }
 
