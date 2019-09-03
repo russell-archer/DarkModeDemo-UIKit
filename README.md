@@ -105,23 +105,93 @@ You can see that the image adapts automatically when the display mode changes:
 ![](./readme-assets/image10.jpg)
 
 ## Storyboards
-TODO
+The easiest way to ensure that storyboards can automatically adapt to the selected display mode is by using system 
+colors and named adaptive colors and images.
+
+For example, here my tableview uses the default **Default Label Color** for the main or title label:
+
+![](./readme-assets/image11.jpg)
+
+This is how it looks in light and dark mode:
+
+![](./readme-assets/image12.jpg)
+
+Here I wanted a slightly smaller, less prominent font and color for descriptive text. Using **Secondary Label Color** is a good choice for this:
+
+![](./readme-assets/image13.jpg)
 
 ___
 
 # Practice: Updating Writerly
-TODO
+I recently finished updating one of my App Store apps (Writerly [https://apps.apple.com/app/writerly/id1143101981?ls=1]) for iOS 13 and 
+dark mode. The app is essentially a tableview master-detail where pages are selected from a list and content shown in a detail view controller. 
+The content itself is large amounts of formatted text. The text also contains images, buttons, links, and other interactive elements and is 
+created as HTML, CSS rendered in a **WKWebView**. Interactive elements on the HTML page communicate with the iOS core of the 
+app using Javascript.
+
+Although I encountered very few real issues, the main things are noted below.
 
 ## Storyboard defaults
+When I first enabled dark mode the app mostly did not appear to notice! A quick review of the storyboard showed that in lots of places I’d used
+custom static colors. Changing these for suitable default and system colors very quickly solved most of the glaring issues.
 
 ## Programmatic non-static colors
+In a few places (e.g. **tableView(__:cellForRowAt:)** and **tableView(_:viewForHeaderInSection:)**) I was setting static custom 
+colors to provide the user with visual clues to different types of content. By using adaptive colors as outlined above I was quickly 
+able to make things look presentable in light and dark modes:
+
+![](./readme-assets/image14.jpg)
 
 ## WKWebView stylesheet media dark
+My biggest area of concern was over fifty HTML pages and about a hundred images, all of which had been designed for light mode. In the back of
+my mind was the *hope* that there would be some sort of media query that I could use in the stylesheet to automatically switch designs between
+dark and light mode. Amazingly, this turned out to be true and was remarkably straightforward to implement!
+
+The magic media query turns out to be:
+
+``` html
+@media(prefers-color-scheme: dark) { ... }
+``` 
+
+So, all I had to do was tag a dark mode section to the end of the existing stylesheet and my pages adapted themselves rather nicely:
+
+``` html
+:root { color-scheme: light dark; }  /* Let WebKit know we support light mode and dark mode */
+/* Explicit styles for light mode */
+html { background-color: white; -webkit-touch-callout: none; -webkit-user-select: none; }  
+body { background-color: white; color: #4A4A4A; font-size: 1.2em; font-family: -apple-system; }  
+h3 {color: #305377; }
+h4 {color: #305377; }
+h5 {color: #305377; }
+:
+:
+/* Explicit styles for dark mode */
+@media(prefers-color-scheme: dark) {
+    html { background-color: #303030; }  /* Dark grey */
+    body { background-color: #303030;  color: #D6D6D6; }  /* Dark grey; silver */
+    h3 {color: #942193; }  /* Plum */
+    h4 {color: #942193; }  /* Plum */
+    h5 {color: #942193; }  /* Plum */
+    :
+    :
+}
+``` 
+
+![](./readme-assets/image15.jpg)
 
 ## HTML using media queries on <img>
-See https://webkit.org/blog/8840/dark-mode-support-in-webkit/
+The final thing I had to do was adjust a few images. For example, where they had prominent white borders.
+To automatically switch between light and dark mode images all that’s required is to replace **<img>** elements with 
+**<picture>**, as the latter supports media queries:
 
-___
+``` html
+<!-- <img class="page-image" src="intro-how-to-use-ipad.jpg”/> -->
+<picture>
+    <source class="page-image" srcset="intro-how-to-use-ipad-dark.jpg" media="(prefers-color-scheme: dark)">
+    <img class="page-image" src="intro-how-to-use-ipad.jpg">
+</picture>
+```
 
-# SwiftUI
-TODO
+![](./readme-assets/image16.jpg)
+
+See https://webkit.org/blog/8840/dark-mode-support-in-webkit/ for more details.

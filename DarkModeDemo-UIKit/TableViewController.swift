@@ -12,6 +12,22 @@ import UIKit
 class TableViewController: UITableViewController {
     var dataStore = AnimalRepository()
 
+    // MARK: Programmatically detect display mode change (not required in this demo)
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        switch traitCollection.userInterfaceStyle {
+            case .dark: darkModeEnabled()   // Switch to dark mode colors, etc.
+            case .light: fallthrough
+            case .unspecified: fallthrough
+            default: lightModeEnabled()   // Switch to light mode colors, etc.
+        }
+    }
+
+    private func lightModeEnabled() {}
+    private func darkModeEnabled() {}
+    
     // MARK: Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
