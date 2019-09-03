@@ -12,11 +12,11 @@ Happily, supporting dark mode is normally fairly simple. Unless, that is, your d
 At a basic level, all you need to do to support dark mode is re-build your app with the iOS 13 SDK.
 All UIKit views such as labels, table views and buttons have been updated to automatically render themselves correctly when dark mode is enabled.
 
-There are likely three main areas where manually review or changes will be necessary:
+There are likely three main areas where manual review or changes will be necessary:
 
 1. **Static colors**. Where your apps uses colors like **UIColor.red** or **UIColor(red: 0, green: 255, blue: 0, alpha: 1)**
 2. **Images**. For example, where an image has a white or light-colored border
-3. **Storyboards**. For example, color attributes that use non-default values
+3. **Storyboards**. For example, color attributes that use non-system or default values
 
 ___
 
@@ -122,11 +122,11 @@ Here I wanted a slightly smaller, less prominent font and color for descriptive 
 
 ___
 
-# Practice: Updating Writerly
-I recently finished updating one of my App Store apps (Writerly [https://apps.apple.com/app/writerly/id1143101981?ls=1]) for iOS 13 and 
+# Practice: Updating an existing App Store app
+I recently finished updating one of my App Store apps (**Writerly** [https://apps.apple.com/app/writerly/id1143101981?ls=1]) for iOS 13 and 
 dark mode. The app is essentially a tableview master-detail where pages are selected from a list and content shown in a detail view controller. 
 The content itself is large amounts of formatted text. The text also contains images, buttons, links, and other interactive elements and is 
-created as HTML, CSS rendered in a **WKWebView**. Interactive elements on the HTML page communicate with the iOS core of the 
+created as HTML and CSS rendered in a **WKWebView**. Interactive elements on the HTML page communicate with the iOS core of the 
 app using Javascript.
 
 Although I encountered very few real issues, the main things are noted below.
@@ -165,7 +165,7 @@ h4 {color: #305377; }
 h5 {color: #305377; }
 :
 :
-/* Explicit styles for dark mode */
+/* Override styles required for dark mode */
 @media(prefers-color-scheme: dark) {
     html { background-color: #303030; }  /* Dark grey */
     body { background-color: #303030;  color: #D6D6D6; }  /* Dark grey; silver */
@@ -179,16 +179,16 @@ h5 {color: #305377; }
 
 ![](./readme-assets/image15.jpg)
 
-## HTML using media queries on <img>
+## HTML using media queries on &lt;img&gt;
 The final thing I had to do was adjust a few images. For example, where they had prominent white borders.
-To automatically switch between light and dark mode images all that’s required is to replace **<img>** elements with 
-**<picture>**, as the latter supports media queries:
+To automatically switch between light and dark mode images all that’s required is to replace **&lt;img&gt;** elements with 
+**&lt;picture&gt;**, as the latter supports media queries:
 
 ``` html
-<!-- <img class="page-image" src="intro-how-to-use-ipad.jpg”/> -->
+<!-- <img class="page-image" src="intro-ipad.jpg”/> -->
 <picture>
-    <source class="page-image" srcset="intro-how-to-use-ipad-dark.jpg" media="(prefers-color-scheme: dark)">
-    <img class="page-image" src="intro-how-to-use-ipad.jpg">
+    <source class="page-image" srcset="intro-ipad-dark.jpg" media="(prefers-color-scheme: dark)">
+    <img class="page-image" src="intro-ipad.jpg">
 </picture>
 ```
 
