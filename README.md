@@ -122,6 +122,13 @@ Here I wanted a slightly smaller, less prominent font and color for descriptive 
 
 ___
 
+## Interface Builder Dark Mode Support
+A new addition to Xcode 11 is the ability to switch between light and dark mode in the Interface Builder **device bar**:
+
+![](./readme-assets/ibDisplayMode.gif)
+
+___
+
 # Practice: Updating an existing App Store app
 I recently finished updating one of my App Store apps (**Writerly** [https://apps.apple.com/app/writerly/id1143101981?ls=1]) for iOS 13 and 
 dark mode. The app is essentially a tableview master-detail where pages are selected from a list and content shown in a detail view controller. 
