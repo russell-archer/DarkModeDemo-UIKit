@@ -1,5 +1,6 @@
 #  DarkModeDemo-UIKit
 ## Preparing for iOS 13 Dark Mode
+**(Updated for Xcode 11 Beta 7)**
 
 ![](./readme-assets/adaptiveColors50.gif)
 
