@@ -85,6 +85,7 @@
 		6814C6E6231AA685008AB52C = {
 			isa = PBXGroup;
 			children = (
+				68BD3CA523710BF900EE66C1 /* docs */,
 				68F6D964231D909800415579 /* readme-assets */,
 				6849A010231BF8FD00105323 /* README.md */,
 				6814C6F1231AA685008AB52C /* DarkModeDemo-UIKit */,
@@ -116,6 +117,13 @@
 				6814C6F8231AA685008AB52C /* Main.storyboard */,
 			);
 			path = "DarkModeDemo-UIKit";
+			sourceTree = "<group>";
+		};
+		68BD3CA523710BF900EE66C1 /* docs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = docs;
 			sourceTree = "<group>";
 		};
 		68F6D964231D909800415579 /* readme-assets */ = {
