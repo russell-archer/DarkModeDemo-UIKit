@@ -29,19 +29,19 @@ However, if you need to *programmatically* detect when the display mode changes 
 ``` swift
 class TableViewController: UITableViewController {
 
-override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-super.traitCollectionDidChange(previousTraitCollection)
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
 
-switch traitCollection.userInterfaceStyle {
-case .dark: darkModeEnabled()   // Switch to dark mode colors, etc.
-case .light: fallthrough
-case .unspecified: fallthrough
-default: lightModeEnabled()   // Switch to light mode colors, etc.
-}
+        switch traitCollection.userInterfaceStyle {
+            case .dark: darkModeEnabled()   // Switch to dark mode colors, etc.
+            case .light: fallthrough
+            case .unspecified: fallthrough
+            default: lightModeEnabled()   // Switch to light mode colors, etc.
+        }
 }
 
-private func lightModeEnabled() { ... }
-private func darkModeEnabled() { ... }
+    private func lightModeEnabled() { ... }
+    private func darkModeEnabled() { ... }
 }
 ```
 
@@ -175,13 +175,13 @@ h5 {color: #305377; }
 :
 /* Override styles required for dark mode */
 @media(prefers-color-scheme: dark) {
-html { background-color: #303030; }  /* Dark grey */
-body { background-color: #303030;  color: #D6D6D6; }  /* Dark grey; silver */
-h3 {color: #942193; }  /* Plum */
-h4 {color: #942193; }  /* Plum */
-h5 {color: #942193; }  /* Plum */
-:
-:
+    html { background-color: #303030; }  /* Dark grey */
+    body { background-color: #303030;  color: #D6D6D6; }  /* Dark grey; silver */
+    h3 {color: #942193; }  /* Plum */
+    h4 {color: #942193; }  /* Plum */
+    h5 {color: #942193; }  /* Plum */
+    :
+    :
 }
 ``` 
 
@@ -195,8 +195,8 @@ To automatically switch between light and dark mode images all that’s required
 ``` html
 <!-- <img class="page-image" src="intro-ipad.jpg”/> -->
 <picture>
-<source class="page-image" srcset="intro-ipad-dark.jpg" media="(prefers-color-scheme: dark)">
-<img class="page-image" src="intro-ipad.jpg">
+    <source class="page-image" srcset="intro-ipad-dark.jpg" media="(prefers-color-scheme: dark)">
+    <img class="page-image" src="intro-ipad.jpg">
 </picture>
 ```
 
