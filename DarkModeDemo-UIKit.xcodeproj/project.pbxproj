@@ -86,9 +86,8 @@
 		6814C6E6231AA685008AB52C = {
 			isa = PBXGroup;
 			children = (
-				68BD3CA523710BF900EE66C1 /* docs */,
-				68F6D964231D909800415579 /* readme-assets */,
 				6849A010231BF8FD00105323 /* README.md */,
+				68BD3CA523710BF900EE66C1 /* docs */,
 				6814C6F1231AA685008AB52C /* DarkModeDemo-UIKit */,
 				6814C6F0231AA685008AB52C /* Products */,
 			);
@@ -123,12 +122,13 @@
 		68BD3CA523710BF900EE66C1 /* docs */ = {
 			isa = PBXGroup;
 			children = (
+				68BD3CA72371107100EE66C1 /* assets */,
 				68BD3CA623710CA500EE66C1 /* index.md */,
 			);
 			path = docs;
 			sourceTree = "<group>";
 		};
-		68F6D964231D909800415579 /* readme-assets */ = {
+		68BD3CA72371107100EE66C1 /* assets */ = {
 			isa = PBXGroup;
 			children = (
 				68F6D965231D90AE00415579 /* adaptiveColors50.gif */,
@@ -150,7 +150,7 @@
 				682E3E26231DE72500836616 /* image15.jpg */,
 				682E3E24231DE72500836616 /* image16.jpg */,
 			);
-			path = "readme-assets";
+			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

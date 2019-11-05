@@ -2,7 +2,7 @@
 ## Preparing for iOS 13 Dark Mode
 **(Updated for Xcode 11 Beta 7)**
 
-![](./readme-assets/adaptiveColors50.gif)
+![](./docs/assets/adaptiveColors50.gif)
 
 # Theory
 Following the introduction of support for **Dark Mode** in macOS, the release of iOS 13 sees iOS devices gain dark mode settings. 
@@ -51,25 +51,25 @@ those colors do not automatically adapt. A better practice is to define *adaptiv
 
 Open the asset catalog, right-click in the list of assets (or click the “+” at the bottom of the asset pane) and select **New Color Set**:
 
-![](./readme-assets/image01.jpg)
+![](./docs/assets/image01.jpg)
 
 You’ll see:
 
-![](./readme-assets/image02.jpg)
+![](./docs/assets/image02.jpg)
 
 In the **Attribute Inspector** select **Any, Light, Dark** from the **Appearance** dropdown list:
 
-![](./readme-assets/image03.jpg)
+![](./docs/assets/image03.jpg)
 
-![](./readme-assets/image04.jpg)
+![](./docs/assets/image04.jpg)
 
 You can now name the define the color you want for each display mode:
 
-![](./readme-assets/image05.jpg)
+![](./docs/assets/image05.jpg)
 
 You can then use the color in Interface Builder or in code:
 
-![](./readme-assets/image06.jpg)
+![](./docs/assets/image06.jpg)
 
 ``` swift
 // The colors adaptiveRed and adaptiveBlue are defined in the asset catalogue
@@ -79,20 +79,20 @@ cell.colorTabView.backgroundColor = UIColor(named: selectedAnimal.canFly ? "adap
 In the above code snippet I’m adding a background color to a View in a custom table view cell. 
 You can see the color adapts according to light or dark mode being selected:
 
-![](./readme-assets/adaptiveColors50.gif)
+![](./docs/assets/adaptiveColors50.gif)
 
-![](./readme-assets/image07.jpg)
+![](./docs/assets/image07.jpg)
 
 ## Images
 In a very similar way as for adaptive colors, we can make use of adaptive images in the asset catalog.
 
 Select an image in the asset catalog and then select **Any, Dark** from the **Appearance** dropdown list:
 
-![](./readme-assets/image08.jpg)
+![](./docs/assets/image08.jpg)
 
 Now drag in a new image for for use in dark mode:
 
-![](./readme-assets/image09.jpg)
+![](./docs/assets/image09.jpg)
 
 In this example I’m adding images to the table view like this:
 
@@ -103,7 +103,7 @@ cell.animalImageView.image = UIImage(named: selectedAnimal.thumbName)
 
 You can see that the image adapts automatically when the display mode changes:
 
-![](./readme-assets/image10.jpg)
+![](./docs/assets/image10.jpg)
 
 ## Storyboards
 The easiest way to ensure that storyboards can automatically adapt to the selected display mode is by using system 
@@ -111,22 +111,22 @@ colors and named adaptive colors and images.
 
 For example, here my tableview uses the default **Default Label Color** for the main or title label:
 
-![](./readme-assets/image11.jpg)
+![](./docs/assets/image11.jpg)
 
 This is how it looks in light and dark mode:
 
-![](./readme-assets/image12.jpg)
+![](./docs/assets/image12.jpg)
 
 Here I wanted a slightly smaller, less prominent font and color for descriptive text. Using **Secondary Label Color** is a good choice for this:
 
-![](./readme-assets/image13.jpg)
+![](./docs/assets/image13.jpg)
 
 ___
 
 ## Interface Builder Dark Mode Support
 A new addition to Xcode 11 is the ability to switch between light and dark mode in the Interface Builder **device bar**:
 
-![](./readme-assets/ibDisplayMode.gif)
+![](./docs/assets/ibDisplayMode.gif)
 
 ___
 
@@ -148,7 +148,7 @@ In a few places (e.g. **tableView(__:cellForRowAt:)** and **tableView(_:viewForH
 colors to provide the user with visual clues to different types of content. By using adaptive colors as outlined above I was quickly 
 able to make things look presentable in light and dark modes:
 
-![](./readme-assets/image14.jpg)
+![](./docs/assets/image14.jpg)
 
 ## WKWebView stylesheet media dark
 My biggest area of concern was over fifty HTML pages and about a hundred images, all of which had been designed for light mode. In the back of
@@ -185,7 +185,7 @@ h5 {color: #305377; }
 }
 ``` 
 
-![](./readme-assets/image15.jpg)
+![](./docs/assets/image15.jpg)
 
 ## HTML using media queries on &lt;img&gt;
 The final thing I had to do was adjust a few images. For example, where they had prominent white borders.
@@ -200,6 +200,6 @@ To automatically switch between light and dark mode images all that’s required
 </picture>
 ```
 
-![](./readme-assets/image16.jpg)
+![](./docs/assets/image16.jpg)
 
 See https://webkit.org/blog/8840/dark-mode-support-in-webkit/ for more details.
