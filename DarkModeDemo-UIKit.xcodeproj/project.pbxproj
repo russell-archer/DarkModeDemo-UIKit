@@ -59,6 +59,7 @@
 		682E3E25231DE72500836616 /* image14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image14.jpg; sourceTree = "<group>"; };
 		682E3E26231DE72500836616 /* image15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image15.jpg; sourceTree = "<group>"; };
 		6849A010231BF8FD00105323 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		68BD3CA623710CA500EE66C1 /* notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = notes.md; sourceTree = "<group>"; };
 		68DCD9C3231E946200C931E9 /* ibDisplayMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ibDisplayMode.gif; sourceTree = "<group>"; };
 		68E77A71231C41C20019D734 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		68F6D965231D90AE00415579 /* adaptiveColors50.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = adaptiveColors50.gif; sourceTree = "<group>"; };
@@ -122,6 +123,7 @@
 		68BD3CA523710BF900EE66C1 /* docs */ = {
 			isa = PBXGroup;
 			children = (
+				68BD3CA623710CA500EE66C1 /* notes.md */,
 			);
 			path = docs;
 			sourceTree = "<group>";
