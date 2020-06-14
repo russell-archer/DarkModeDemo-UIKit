@@ -23,5 +23,14 @@ class DetailViewController: UIViewController {
         animalName.text = selectedAnimal!.name
         animalDescription.text = selectedAnimal!.description
         animalImageView.image = UIImage(named: selectedAnimal!.imageName)
+        
+        displayAllSubviews(for: self.view)
+    }
+    
+    func displayAllSubviews(for view: UIView) {
+        view.subviews.forEach { subview in
+            print(subview.debugDescription)
+            displayAllSubviews(for: subview)
+        }
     }
 }
